@@ -12,20 +12,13 @@ var {
   View,
 } = React;
 
+var Hello = require('./components/Hello');
+
 var rn_app = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Hello />
       </View>
     );
   }
@@ -37,6 +30,7 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    marginTop: 20,
   },
   welcome: {
     fontSize: 20,

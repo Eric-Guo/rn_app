@@ -12,19 +12,13 @@ var {
   View,
 } = React;
 
+var Hello = require('./components/Hello');
+
 var rn_app = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          React Native Android now running in Windows!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
+        <Hello />
       </View>
     );
   }
@@ -36,6 +30,7 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    marginTop: 20,
   },
   welcome: {
     fontSize: 21,
