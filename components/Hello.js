@@ -6,7 +6,7 @@ var {
   StyleSheet
 } = React;
 
-export default React.createClass({
+module.exports = React.createClass({
   render: function() {
 
     return (
