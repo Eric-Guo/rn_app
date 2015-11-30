@@ -1,6 +1,6 @@
-var React = require('react-native');
+const React = require('react-native');
 
-var {
+const {
   View,
   Text,
   StyleSheet

@@ -4,15 +4,15 @@
  */
 'use strict';
 
-var React = require('react-native');
-var {
+const React = require('react-native');
+const {
   AppRegistry,
   StyleSheet,
   Text,
   View,
 } = React;
 
-var Hello = require('./components/Hello');
+const Hello = require('./components/Hello');
 
 var rn_app = React.createClass({
   render: function() {
