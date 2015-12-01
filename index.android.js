@@ -8,13 +8,13 @@ const {
   View,
 } = React;
 
-const Hello = require('./components/Hello');
+const Issues = require('./components/Issues');
 
 var rn_app = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
-        <Hello />
+        <Issues />
       </View>
     );
   }
