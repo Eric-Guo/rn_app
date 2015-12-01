@@ -40,7 +40,7 @@ module.exports = React.createClass({
 
   renderTitle(issue) {
     return (
-      <Text>
+      <Text style={styles.title}>
         {issue.title}
       </Text>
     );
@@ -48,7 +48,14 @@ module.exports = React.createClass({
 });
 
 const styles = StyleSheet.create({
+  title: {
+    color: '#fff',
+    borderWidth: 1,
+    borderColor: '#fff',
+    padding: 10,
+    margin: 5
+  },
   listView: {
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#222358',
   },
 });
