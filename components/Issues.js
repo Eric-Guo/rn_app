@@ -56,6 +56,9 @@ const styles = StyleSheet.create({
     margin: 5
   },
   listView: {
+    flex: 1,
+    alignSelf: 'stretch',
+    marginTop: 50,
     backgroundColor: '#222358',
   },
 });

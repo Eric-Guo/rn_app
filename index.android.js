@@ -9,12 +9,14 @@ const {
 } = React;
 
 const Issues = require('./components/Issues');
+const SearchBox = require('./components/SearchBox');
 
 var rn_app = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
         <Issues />
+        <SearchBox />
       </View>
     );
   }
@@ -26,7 +28,6 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-    marginTop: 20,
   },
   welcome: {
     fontSize: 21,
