@@ -1,9 +1,39 @@
 let _issues = {};
+let _filteredIssues = {};
+
+const EventEmitter = require('EventEmitter');
+
+const _ = require('lodash');
+
+const emitter = new EventEmitter;
+
+function emitChange() {
+  emitter.emit("change");
+}
 
 module.exports = {
   getIssues() {
-    return _issues;
+    console.log(_filteredIssues.length)
+    return _filteredIssues;
   },
+
+  addChangeListener(callback) {
+    emitter.addListener("change", callback);
+  },
+
+  searchIssues(query) {
+    console.log('searchIssues')
+    if (query === '') {
+      _filteredIssues = _issues;
+      return;
+    }
+
+    _filteredIssues = _.filter(_issues, function(val, key) {
+      return val.title.toLowerCase().indexOf(query) != -1
+    });
+    emitChange();
+  }
+
 }
 
 function loadIssues(rawIssues) {
@@ -12,7 +42,7 @@ function loadIssues(rawIssues) {
     issues[`#${rawIssue.id}`] = rawIssue
   });
 
-  _issues = issues;
+  _filteredIssues = _issues = issues;;
 }
 
 const _rawIssues = [

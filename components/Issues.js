@@ -20,15 +20,15 @@ module.exports = React.createClass({
     };
   },
 
+  componentWillMount: function() {
+    this.updateUI();
+  },
+
   componentDidMount: function() {
-    const issues = IssueStore.getIssues();
-    this.setState({
-      dataSource: this.state.dataSource.cloneWithRows(issues)
-    });
+    IssueStore.addChangeListener(()=> this.updateUI());
   },
 
   render: function() {
-
     return (
       <ListView
         dataSource={this.state.dataSource}
@@ -36,6 +36,13 @@ module.exports = React.createClass({
         style={styles.listView}
       />
     );
+  },
+
+  updateUI() {
+    const issues = IssueStore.getIssues();
+    this.setState({
+      dataSource: this.state.dataSource.cloneWithRows(issues)
+    });
   },
 
   renderTitle(issue) {
