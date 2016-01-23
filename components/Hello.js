@@ -11,8 +11,14 @@ module.exports = React.createClass({
 
     return (
       <View style={styles.container}>
-        <Text>
-          Hello World!
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit index.android.js
+        </Text>
+        <Text style={styles.instructions}>
+          Shake or press menu button for dev menu
         </Text>
       </View>
     );
@@ -22,6 +28,18 @@ module.exports = React.createClass({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignSelf: 'stretch',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
   },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  }
 });
