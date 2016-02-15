@@ -15,7 +15,7 @@ var PAGE_SIZE = 25;
 var PARAMS = '?apikey=' + API_KEY + '&page_limit=' + PAGE_SIZE;
 var REQUEST_URL = API_URL + PARAMS;
 
-class rn_app extends Component {
+var rn_app = React.createClass({
   getInitialState: function() {
     return {
       dataSource: new ListView.DataSource({
@@ -78,10 +78,10 @@ class rn_app extends Component {
         </View>
       </View>
     );
-  }
-}
+  },
+});
 
-class styles extends StyleSheet {
+var styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
@@ -105,8 +105,9 @@ class styles extends StyleSheet {
     height: 81,
   },
   listView: {
+    paddingTop: 20,
     backgroundColor: '#F5FCFF',
-  }
-}
+  },
+});
 
 AppRegistry.registerComponent('rn_app', () => rn_app);
